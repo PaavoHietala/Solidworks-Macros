@@ -1,6 +1,6 @@
 # Solidworks-Macros
 
-A collection of various Solidworks VBA scripts.
+A collection of various Solidworks VBA scripts, macros, functions, subroutines and other bits & pieces.
 
 ## Usage
 
@@ -50,17 +50,18 @@ r_{31} & r_{32} & r_{33} \\
 \end{bmatrix}
 $$
 
-$$
+```math
 \begin{aligned}
-\phi_Z &= \begin{cases} 0 & \text{if } r_{11} = r_{21} = 0 \\
-            -\arctan2(-r_{21}, r_{11}) & \text{otherwise} \end{cases}\\
+\text{if } r_{11} = r_{21} = 0 \hspace{1em} & \begin{cases} \phi_Z = 0 & \\
+                                                            \phi_Y = -\pi / 2 \\
+                                                            \phi_X = -\arctan2(-r_{12}, r_{22})
+                                              \end{cases} \\[10pt]
 
-\phi_Y &= \begin{cases} -\pi / 2 & \text{if } r_{11} = r_{21} = 0 \\
-            -\arctan2(r_{31}, \sqrt{r_{11}^2 + (-r_{21})^2}) & \text{otherwise} \end{cases}\\
-
-\phi_X &= \begin{cases} -\arctan2(-r_{12}, r_{22}) & \text{if } r_{11} = r_{21} = 0 \\
-            -\arctan2(r_{32}, r_{33}) & \text{otherwise} \end{cases}
+\text{otherwise} \hspace{1em} & \begin{cases} \phi_Z = -\arctan2(-r_{21}, r_{11}) \\
+                                              \phi_Y = -\arctan2(r_{31}, \sqrt{r_{11}^2 + (-r_{21})^2}) \\
+                                              \phi_X = -\arctan2(r_{32}, r_{33})
+                                \end{cases}
 \end{aligned}
-$$
+```
 
-Usage: Select coordinate system features you want to copy, then run the script as instructed in the beginning.
+**Usage:** Select coordinate system features you want to copy, then run the script as instructed in the beginning.
