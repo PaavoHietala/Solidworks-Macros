@@ -31,7 +31,7 @@ $$
 \end{cases}
 $$
 
-### Subroutine - mirrorCoordsX - Create copies of selected coordinate systems mirrrored on X-axis
+### Subroutine - mirrorCoordsX - Create X-axis-mirrored copies of selected coordinate systems
 
 This subroutine creates a copy of each reference coordinate system mirrored about the X-axis (YZ plane) while preserving the right-handedness of the coordinate system.
 
@@ -65,3 +65,18 @@ $$
 ```
 
 **Usage:** Select coordinate system features you want to copy, then run the script as instructed in the beginning.
+
+
+### Subroutine - saveCoordsToCsv - Save coordinate system locations and angles to csv file
+
+This subroutine iterates over all selected coordinate systems and saves them to a csv file. The saved properties are the feature name, XYZ location and local coordinate axes X, Y and Z as unit vectors. As with all Solidworks API calls, the units are returned in meters.
+
+An example of the output:
+```csv
+Slot,X,Y,Z,XX,XY,XZ,YX,YY,YZ,ZX,ZY,ZZ
+Sensor coordinates B4,-0.0275,0.0802,0.0945,0.9379,0.1643,0.3055,-0.0101,0.8934,-0.4492,-0.3467,0.4182,0.8396
+Sensor coordinates B3,0.0275,0.0802,0.0945,0.9379,-0.1643,-0.3055,0.0101,0.8934,-0.4492,0.3467,0.4182,0.8396
+Sensor coordinates B2,-0.0268,0.0514,0.1040,0.9404,0.0870,0.3288,-0.0309,0.9846,-0.1721,-0.3387,0.1517,0.9286
+```
+
+**Usage:** Select coordinate system features you want to export, then run the script as instructed in the beginning.
